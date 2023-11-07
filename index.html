@@ -10,13 +10,21 @@
 <body>
     <body>
         <div class="container">
-     <!-- WHEN I click the start button
-THEN a timer starts and I am presented with a question -->
+            <button id="startpageHscore">High Scores</button>
             <div id="start">
                 <h2>Coding Quiz Challenge</h2>
                 <h2>Try to answer the following javascript code questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>
             <button id="startbtn">Start Quiz</button>
-            <button id="startpageHscore">High Scores</button>
+             <div id="quiestions">
+            <div id="timer">Time left: </div>
+                <div id="questions"><p>Questions Placeholder</p></div>
+                    <button id="A" onclick="checkAnswer('A')">A</button>
+                    <button id="B" onclick="checkAnswer('B')">B</button>
+                    <button id="C" onclick="checkAnswer('C')">C</button>
+                    <button id="D" onclick="checkAnswer('D')">D</button>
+                <div id="result"></div>
+        </div>
+           
             
             </div>
 <script src="./assets/script.js"></script>    
