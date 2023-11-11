@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the JavaScript Code Quiz Game, a dynamic, interactive application designed to both challenge and enhance your understanding of JavaScript. This timed quiz offers a series of questions focused solely on JavaScript, testing your knowledge and decision-making skills under pressure. Incorrect answers incur a time penalty, adding an extra layer of challenge. Upon completion, players can record their initials and scores, promoting a sense of competition and achievement.
+Welcome to the JavaScript Code Quiz Game, a dynamic, interactive application designed to both challenge and enhance your understanding of JavaScript. This timed quiz offers a series of questions focused solely on JavaScript, testing your knowledge and decision-making skills under pressure. Incorrect answers incur a time penalty, adding an extra layer of challenge. Upon completion, players can record their initials and scores, promoting a sense of competition and achievement.Please feel free to explore the source code and visit the live version here (https://diegoar98.github.io/Code-Quiz/)
 
 ## Features
 
