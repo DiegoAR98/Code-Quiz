@@ -3,30 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css" />
     <title>Code-Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
-
 <body>
-    <body>
-        <div class="container">
-            <button id="startpageHscore">High Scores</button>
-            <div id="start">
-                <h2>Coding Quiz Challenge</h2>
-                <h2>Try to answer the following javascript code questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>
-            <button id="startbtn">Start Quiz</button>
-             <div id="quiestions">
-            <div id="timer">Time left: </div>
-                <div id="questions"><p>Questions Placeholder</p></div>
-                    <button id="A" onclick="checkAnswer('A')">A</button>
-                    <button id="B" onclick="checkAnswer('B')">B</button>
-                    <button id="C" onclick="checkAnswer('C')">C</button>
-                    <button id="D" onclick="checkAnswer('D')">D</button>
-                <div id="result"></div>
-        </div>
-           
-            
+    <main class="quiz-container">
+
+        <section id="introScreen">
+            <h1>Coding Quiz Challenge</h1>
+            <h2>Answer the JavaScript questions within the time limit. Incorrect answers penalize your score/time by ten seconds!</h2>
+            <button id="beginButton">Start Quiz</button>
+            <button id="highscoresButton" onclick="displayHighScores()">High Scores</button>
+        </section>
+
+        <section id="quizArea">
+            <div id="timeRemaining">Time left: </div>
+            <div id="questionDisplay"><p>Question Placeholder</p></div>
+            <button id="choiceOne" onclick="verifyAnswer('a')">A</button>
+            <button id="choiceTwo" onclick="verifyAnswer('b')">B</button>
+            <button id="choiceThree" onclick="verifyAnswer('c')">C</button>
+            <button id="choiceFour" onclick="verifyAnswer('d')">D</button>
+            <div id="answerFeedback"></div>
+        </section>
+
+        <section id="completionScreen">
+            <div id="scoreDisplay"></div>
+            <input type="text" size="40" placeholder="Enter your initials for high score" name="userInitials" id="userInitials"/>
+            <button id="scoreSubmit">Submit Score</button>
+        </section>
+
+        <section id="highscoreSection">
+            <article id="highscorePanel">
+                <header id="highscoreHead">
+                    <h3>User Initials</h3>
+                    <h3>Score</h3>
+                </header>
+                <div id="initialsList"></div>
+                <div id="scoresList"></div>
+            </article>
+            <div id="postGameOptions">
+                <button id="restartGame" onclick="restartQuiz()">Play Again</button>
+                <button id="clearHighscores" onclick="clearHighscores()">Clear Highscores</button>
             </div>
-<script src="./assets/script.js"></script>    
+        </section>
+    </main>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
