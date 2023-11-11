@@ -126,7 +126,6 @@ submitScoreButton.addEventListener("click", function() {
 });
 
 // Displays the high scores section
-//**review this function before send **
 function displayHighScores() {
     completionScreen.style.display = "none";
     highscoreSection.style.display = "flex";

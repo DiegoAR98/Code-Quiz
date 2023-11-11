@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code-Quiz</title>
+    <title>JS-Code-Quiz</title>
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
 <body>
     <main class="quiz-container">
 
         <section id="introScreen">
-            <h1>Coding Quiz Challenge</h1>
+            <h1>JavaScript Code Quiz Game</h1>
             <h2>Answer the JavaScript questions within the time limit. Incorrect answers penalize your score/time by ten seconds!</h2>
             <button id="beginButton">Start Quiz</button>
             <button id="highscoresButton" onclick="displayHighScores()">High Scores</button>
@@ -33,19 +33,21 @@
         </section>
 
         <section id="highscoreSection">
-            <article id="highscorePanel">
+            <div id="highscorePanel">
                 <header id="highscoreHead">
                     <h3>User Initials</h3>
                     <h3>Score</h3>
                 </header>
                 <div id="initialsList"></div>
                 <div id="scoresList"></div>
-            </article>
+            </div>
+
             <div id="postGameOptions">
                 <button id="restartGame" onclick="restartQuiz()">Play Again</button>
                 <button id="clearHighscores" onclick="clearHighscores()">Clear Highscores</button>
             </div>
         </section>
+
     </main>
     <script src="./assets/script.js"></script>
 </body>
