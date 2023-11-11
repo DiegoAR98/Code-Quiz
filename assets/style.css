@@ -1,6 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+:root {
+    --main-bg-color: rgb(253, 233, 224);
+    --accent-color: rgb(255, 165, 0); /* Orange */
+    --accent-hover-color: rgb(230, 148, 0); /* Darker Orange for Hover */
+    --text-color: #333333; /* Dark grey */
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.quiz-container {
+    width: 100%; 
+    height: auto; 
+    min-height: 100vh; /* Ensure it at least covers the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h2, p {
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover, button:focus { /* Added focus state for accessibility */
+    background-color: var(--accent-hover-color); 
+}
+
+#quizArea, #completionScreen, #highscoreSection {
+    display: none;
+}
+
+#timeRemaining {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+#highscorePanel {
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#highscoreHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#initialsList, #scoresList {
+    text-align: left;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 600px) {
+    .quiz-container {
+        padding: 10px; 
+    }
+
+    button {
+        font-size: 0.9rem; 
+    }
+
+    h2, p {
+        font-size: 0.9rem; 
+    }
+}
+
+/* Media Query for iPads (Tablets) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .quiz-container {
+        padding: 20px; 
+    }
+
+    button {
+        font-size: 1rem; 
+    }
+
+    h2, p {
+        font-size: 1rem; 
+    }
 }
