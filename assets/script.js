@@ -18,14 +18,14 @@ var answerButtons = [document.getElementById("choiceOne"), document.getElementBy
 var quizQuestions = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
-        choiceA: "<script>",
-        choiceB: "<scripting>",
-        choiceC: "<javascript>",
-        choiceD: "<js>",
+        choiceA: "&lt;script&gt;",
+        choiceB: "&lt;scripting&gt;",
+        choiceC: "&lt;javascript&gt;",
+        choiceD: "&lt;js&gt;",
         correctAnswer: "a"
     },
     {
-        question: "What is the correct JavaScript syntax to change the content of the HTML element below?\n<p id='demo'>This is a demonstration.</p>",
+        question: "What is the correct JavaScript syntax to change the content of the HTML element below?\n&lt;p id='demo'&gt;This is a demonstration.&lt;/p&gt;",
         choiceA: "document.getElementById('demo').innerHTML = 'Hello World!';",
         choiceB: "document.getElement('p').innerHTML = 'Hello World!';",
         choiceC: "document.getElementByName('p').innerHTML = 'Hello World!';",
@@ -34,22 +34,22 @@ var quizQuestions = [
     },
     {
         question: "Where is the correct place to insert a JavaScript?",
-        choiceA: "The <head> section",
-        choiceB: "The <body> section",
-        choiceC: "Both the <head> section and the <body> section are correct",
+        choiceA: "The &lt;head&gt; section",
+        choiceB: "The &lt;body&gt; section",
+        choiceC: "Both the &lt;head&gt; section and the &lt;body&gt; section are correct",
         choiceD: "None of the above",
         correctAnswer: "c"
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        choiceA: "<script src='xxx.js'>",
-        choiceB: "<script name='xxx.js'>",
-        choiceC: "<script href='xxx.js'>",
-        choiceD: "<script file='xxx.js'>",
+        choiceA: "&lt;script src='xxx.js'&gt;",
+        choiceB: "&lt;script name='xxx.js'&gt;",
+        choiceC: "&lt;script href='xxx.js'&gt;",
+        choiceD: "&lt;script file='xxx.js'&gt;",
         correctAnswer: "a"
     },
     {
-        question: "The external JavaScript file must contain the <script> tag.",
+        question: "The external JavaScript file must contain the &lt;script&gt; tag.",
         choiceA: "True",
         choiceB: "False",
         correctAnswer: "b"
@@ -114,14 +114,14 @@ var quizQuestions = [
         question: "How can you add a comment in a JavaScript?",
         choiceA: "//This is a comment",
         choiceB: "'This is a comment",
-        choiceC: "<!--This is a comment-->",
+        choiceC: "&lt;!--This is a comment--&gt;",
         choiceD: "/* This is a comment */",
         correctAnswer: "a"
     },
     {
         question: "How to insert a comment that has more than one line?",
         choiceA: "/*This comment has\nmore than one line*/",
-        choiceB: "<!--This comment has\nmore than one line-->",
+        choiceB: "&lt;!--This comment has\nmore than one line--&gt;",
         choiceC: "//This comment has\nmore than one line//",
         choiceD: "// This comment has\n// more than one line",
         correctAnswer: "a"
@@ -210,12 +210,10 @@ var quizQuestions = [
     }
 ];
 
-
-
 // Global variables for quiz logic
 var totalQuestions = quizQuestions.length;
 var currentQuestionIndex = 0;
-var remainingTime = 420;
+var remainingTime = 420; // 7 minutes
 var timer;
 var score = 0;
 
@@ -294,9 +292,8 @@ function restartQuiz() {
     introScreen.style.display = "block";
     currentQuestionIndex = 0;
     score = 0;
-    remainingTime = 420;
+    remainingTime = 420; // Reset to 7 minutes
 }
-
 
 // Clears the high score list
 function clearHighscores() {
@@ -322,5 +319,6 @@ function verifyAnswer(selectedAnswer) {
         displayQuestion();
     }
 }
+
 // Event listener to start the quiz
 startButton.addEventListener("click", startQuiz);
