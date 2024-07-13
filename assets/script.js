@@ -215,7 +215,7 @@ var quizQuestions = [
 // Global variables for quiz logic
 var totalQuestions = quizQuestions.length;
 var currentQuestionIndex = 0;
-var remainingTime = 76;
+var remainingTime = 420;
 var timer;
 var score = 0;
 
@@ -294,8 +294,9 @@ function restartQuiz() {
     introScreen.style.display = "block";
     currentQuestionIndex = 0;
     score = 0;
-    remainingTime = 76;
+    remainingTime = 420;
 }
+
 
 // Clears the high score list
 function clearHighscores() {
