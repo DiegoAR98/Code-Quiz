@@ -17,11 +17,49 @@ var answerButtons = [document.getElementById("choiceOne"), document.getElementBy
 // Define quiz questions
 var quizQuestions = [
     {
+        question: "Inside which HTML element do we put the JavaScript?",
+        choiceA: "<script>",
+        choiceB: "<scripting>",
+        choiceC: "<javascript>",
+        choiceD: "<js>",
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the correct JavaScript syntax to change the content of the HTML element below?\n<p id='demo'>This is a demonstration.</p>",
+        choiceA: "document.getElementById('demo').innerHTML = 'Hello World!';",
+        choiceB: "document.getElement('p').innerHTML = 'Hello World!';",
+        choiceC: "document.getElementByName('p').innerHTML = 'Hello World!';",
+        choiceD: "#demo.innerHTML = 'Hello World!';",
+        correctAnswer: "a"
+    },
+    {
+        question: "Where is the correct place to insert a JavaScript?",
+        choiceA: "The <head> section",
+        choiceB: "The <body> section",
+        choiceC: "Both the <head> section and the <body> section are correct",
+        choiceD: "None of the above",
+        correctAnswer: "c"
+    },
+    {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        choiceA: "script src='xxx.js'",
-        choiceB: "script href='xxx.js'",
-        choiceC: "script name='xxx.js'",
-        choiceD: "script file='xxx.js'",
+        choiceA: "<script src='xxx.js'>",
+        choiceB: "<script name='xxx.js'>",
+        choiceC: "<script href='xxx.js'>",
+        choiceD: "<script file='xxx.js'>",
+        correctAnswer: "a"
+    },
+    {
+        question: "The external JavaScript file must contain the <script> tag.",
+        choiceA: "True",
+        choiceB: "False",
+        correctAnswer: "b"
+    },
+    {
+        question: "How do you write 'Hello World' in an alert box?",
+        choiceA: "alert('Hello World');",
+        choiceB: "msg('Hello World');",
+        choiceC: "alertBox('Hello World');",
+        choiceD: "msgBox('Hello World');",
         correctAnswer: "a"
     },
     {
@@ -33,38 +71,145 @@ var quizQuestions = [
         correctAnswer: "a"
     },
     {
-        question: "Which of the following is correct about features of JavaScript?",
-        choiceA: "It can not handle dates and time.",
-        choiceB: "JavaScript is a lightweight, interpreted programming language.",
-        choiceC: "JavaScript is not object-oriented.",
-        choiceD: "JavaScript cannot be used for Networking applications.",
-        correctAnswer: "b"
+        question: "How do you call a function named 'myFunction'?",
+        choiceA: "myFunction()",
+        choiceB: "call myFunction()",
+        choiceC: "call function myFunction()",
+        choiceD: "myFunction.call()",
+        correctAnswer: "a"
     },
     {
-        question: "Which of the following function of String object combines the text of two strings and returns a new string?",
-        choiceA: "add()",
-        choiceB: "merge()",
-        choiceC: "concat()",
-        choiceD: "append()",
+        question: "How to write an IF statement in JavaScript?",
+        choiceA: "if (i == 5)",
+        choiceB: "if i = 5 then",
+        choiceC: "if i == 5 then",
+        choiceD: "if i = 5",
+        correctAnswer: "a"
+    },
+    {
+        question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+        choiceA: "if (i != 5)",
+        choiceB: "if (i <> 5)",
+        choiceC: "if i <> 5",
+        choiceD: "if i =! 5 then",
+        correctAnswer: "a"
+    },
+    {
+        question: "How does a WHILE loop start?",
+        choiceA: "while (i <= 10; i++)",
+        choiceB: "while i = 1 to 10",
+        choiceC: "while (i <= 10)",
+        choiceD: "while (i >= 10)",
         correctAnswer: "c"
     },
     {
-        question: "Which built-in method returns the length of the string?",
-        choiceA: "length()",
-        choiceB: "size()",
-        choiceC: "index()",
-        choiceD: "None of the above",
+        question: "How does a FOR loop start?",
+        choiceA: "for (i = 0; i <= 5; i++)",
+        choiceB: "for (i <= 5; i++)",
+        choiceC: "for (i = 0; i <= 5)",
+        choiceD: "for i = 1 to 5",
+        correctAnswer: "a"
+    },
+    {
+        question: "How can you add a comment in a JavaScript?",
+        choiceA: "//This is a comment",
+        choiceB: "'This is a comment",
+        choiceC: "<!--This is a comment-->",
+        choiceD: "/* This is a comment */",
+        correctAnswer: "a"
+    },
+    {
+        question: "How to insert a comment that has more than one line?",
+        choiceA: "/*This comment has\nmore than one line*/",
+        choiceB: "<!--This comment has\nmore than one line-->",
+        choiceC: "//This comment has\nmore than one line//",
+        choiceD: "// This comment has\n// more than one line",
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the correct way to write a JavaScript array?",
+        choiceA: "var colors = ['red', 'green', 'blue']",
+        choiceB: "var colors = 'red', 'green', 'blue'",
+        choiceC: "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+        choiceD: "var colors = (1:'red', 2:'green', 3:'blue')",
+        correctAnswer: "a"
+    },
+    {
+        question: "How do you round the number 7.25 to the nearest integer?",
+        choiceA: "Math.round(7.25)",
+        choiceB: "Math.rnd(7.25)",
+        choiceC: "rnd(7.25)",
+        choiceD: "round(7.25)",
+        correctAnswer: "a"
+    },
+    {
+        question: "How do you find the number with the highest value of x and y?",
+        choiceA: "Math.max(x, y)",
+        choiceB: "top(x, y)",
+        choiceC: "ceil(x, y)",
+        choiceD: "Math.ceil(x, y)",
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the correct JavaScript syntax for opening a new window called 'w2'?",
+        choiceA: "w2 = window.open('http://www.w3schools.com');",
+        choiceB: "w2 = window.new('http://www.w3schools.com');",
+        correctAnswer: "a"
+    },
+    {
+        question: "JavaScript is the same as Java.",
+        choiceA: "True",
+        choiceB: "False",
+        correctAnswer: "b"
+    },
+    {
+        question: "How can you detect the client's browser name?",
+        choiceA: "browser.name",
+        choiceB: "client.navName",
+        choiceC: "navigator.appName",
+        choiceD: "client.browserName",
+        correctAnswer: "c"
+    },
+    {
+        question: "Which event occurs when the user clicks on an HTML element?",
+        choiceA: "onclick",
+        choiceB: "onmouseclick",
+        choiceC: "onchange",
+        choiceD: "onmouseover",
         correctAnswer: "a"
     },
     {
         question: "How do you declare a JavaScript variable?",
-        choiceA: "var myVariable;",
-        choiceB: "variable myVariable;",
-        choiceC: "v myVariable;",
-        choiceD: "var: myVariable;",
+        choiceA: "var carName;",
+        choiceB: "variable carName;",
+        choiceC: "v carName;",
+        choiceD: "var: carName;",
+        correctAnswer: "a"
+    },
+    {
+        question: "Which operator is used to assign a value to a variable?",
+        choiceA: "=",
+        choiceB: "x",
+        choiceC: "*",
+        choiceD: "-",
+        correctAnswer: "a"
+    },
+    {
+        question: "What will the following code return: Boolean(10 > 9)",
+        choiceA: "true",
+        choiceB: "NaN",
+        choiceC: "false",
+        choiceD: "undefined",
+        correctAnswer: "a"
+    },
+    {
+        question: "Is JavaScript case-sensitive?",
+        choiceA: "Yes",
+        choiceB: "No",
         correctAnswer: "a"
     }
 ];
+
 
 
 // Global variables for quiz logic
